@@ -1,0 +1,539 @@
+/*Colors: 
+    black - #0D0D0D
+    grey - #F2F2F2
+    turqouise - #7ABFBF
+    light turq - rgba(122, 191, 191, .5)
+    orange - #EB5428
+    */
+
+    @import 
+    url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+    
+    
+    html {
+        background-color: rgba(122, 191, 191, .5);
+    }
+    
+    body {
+        background-color: #F2F2F2;
+        width: 414px;
+    }
+    
+    h1, h2, h3, nav a, nav span, menu li, #social li, footer, figcaption{
+        font-family: 'Bebas Neue', monospace, sans-serif;
+        font-weight: 400;
+    }
+    
+    p, dd, li, nav, input {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400; 
+    }
+    
+    dt {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 40px;
+        text-align: center;
+        margin: auto;
+        margin-top: 150px;
+        padding: 10px;
+    }
+    
+    h2 {
+        font-size: 30px;
+    }
+    
+    h3 {
+        font-size: 25px;
+    }
+    
+    nav a, nav span, menu li, #social li, footer {
+        font-size: 20px;
+    }
+    
+    p, dd, li, nav, input {
+        font-size: 16px;
+    }
+    
+    header {
+        position: absolute;
+        top: 0;
+    }
+    
+    #details {
+        color: #7ABFBF;
+    }
+    
+    #directions {
+        color: #0D0D0D;
+    }
+    
+    #dishes {
+        color: #0D0D0D;
+        background-color: #7ABFBF;
+    }
+    
+    /* HERE LIES THE NAV CSS */
+    
+    nav {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+      positition: fixed;
+      top: 0;
+    }
+    
+    nav ul {
+        grid-row: 1;
+        list-style: none;
+        background-color: white;
+        overflow: hidden;
+        height: 60px;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: 60px 40px;
+        padding: 0;
+        margin: 0;
+        top: 0;
+        width: 414px;
+        justify-items: center;
+        z-index: 1;
+    }
+    
+    nav #menu {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    nav ul  a {
+        width: 35px;
+    }
+    
+    nav ul li {
+        padding: 10px 0;
+        transition: all 0.5s;
+        text-align: center;
+        /* still missing something */
+    }
+    
+    nav ul li:hover {
+        color: #EB5428;
+        filter: brightness(110%);
+        box-shadow: 0 0 10px rgba(235, 84, 40, 0.75);
+        transition: .75s;
+    }
+    
+    nav ul li svg {
+        transition: .75s;
+    }
+    
+    nav ul li:first-child + li {
+        grid-column-start: 3;
+        grid-column-end: 6;
+        background-color: #EB5428;
+        width: 150px;
+    }
+    
+    nav ul li:last-child {
+        grid-column-start: 6;
+        grid-column-end: 8;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    
+    #searchbar {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        height: 45px; 
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+        z-index: 1;
+    }
+    
+    
+    #searchbar input, #searchbar button {
+        height: 40px;
+        margin: 0;
+      
+    }
+    
+    #searchbar input {
+        width: 300px;
+        grid-row: 1;
+        border: 3px solid #eb5428;
+    }
+    
+    #searchbar button {
+        grid-row: 1;
+        background-color: #eb5428;
+        border: 2px solid #eb5428;
+    }
+    
+    /*DID SOMEONE SAY MENU CSS */
+    
+    menu {
+        padding: 0;
+        list-style: none;
+        display: inline-flex;
+        justify-content: space-around;
+        text-align: center;
+        margin: auto;
+    }
+    
+    menu li a {
+        color: #eb5428;
+        transition: all .75s;
+    }
+    
+    menu li a:hover {
+        color: rgba(122, 191, 191, .5);
+        filter: brightness(110%);
+        box-shadow: 0 0 10px rgba(122, 191, 191, 0.75);
+        transition: .75s;
+    }
+    
+    [src*="street-tacos"] {
+        width: 414px;
+    }
+    
+    @media screen and (min-width: 768px){
+    
+        body, nav ul, menu, [src*="street-tacos"] {
+            width: 768px;
+        }
+    
+        [src*="street-tacos"] {
+            width: 768px;
+        }
+    
+        nav ul li:first-child {
+            grid-column-start: 2;
+            grid-column-end: 7;
+            visibility: hidden;
+        }
+    
+        nav ul li:last-child {
+            grid-column-start: 7;
+            grid-column-end: 8;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+    
+        #searchbar {
+            grid-row: 1;
+            position: absolute;
+            z-index: 1;
+            right: 100px;
+        }
+      
+      #searchbar button {
+        grid-row: 1;
+      }
+    
+        h1 {
+            text-align: left;
+        }
+    
+        menu {
+            position: absolute;
+            height: 80px;
+        }
+        
+        menu li {
+            text-align: center;
+        }
+    
+        main {
+            display: grid; 
+            grid-template-areas:
+            'img img img'
+            'intro intro intro'
+            'details details details'
+            'ingredients directions directions'
+            'dishes dishes dishes'
+        }
+    
+        #intro {
+            grid-area: intro;
+        }
+    
+        #details {
+            text-align: center;
+            grid-area: details;
+        }
+    
+        #ingredients {
+            grid-area: ingredients;
+        }
+    
+        #directions {
+            grid-area: directions;
+        }
+    
+        #dishes {
+            grid-area: dishes; 
+            height: 350px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-self: stretch;
+        }
+    
+        #dishes figure {
+            width: 50%;
+        }
+    
+        #social {
+            grid-column: 2;
+            align-content: right;
+        }
+    
+        footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 40px;
+            padding-top: 40px;
+        }
+    
+        footer img {
+            grid-column: 1;
+            grid-row: 2;
+        }
+    }
+    
+    @media screen and (min-width: 1280px) {
+    
+        body, nav ul {
+            width: 1280px;
+        }
+    
+        nav {
+            grid-template-rows: 1fr 100px;
+        }
+        
+        nav ul {
+            height: 100px;
+            grid-template-columns: repeat(11, 1fr);
+            grid-template-rows: 1fr;
+        }
+    
+        #searchbar {
+            grid-row: 2;
+            position: static;
+            background-color: #F2F2F2;
+            padding-top: 50px;
+        }
+    
+        nav ul li:first-child {
+            grid-column: 2;
+            visibility: hidden;
+        }
+    
+        nav ul li:first-child + li {
+            grid-row: 1;
+            grid-column: 1;
+            background-color: #EB5428;
+            width: 110px;
+        }
+    
+        nav ul li:last-child {
+            grid-column: 11;
+            grid-row: 1;
+            width: 68px;
+        }
+    
+        [src*="street-tacos"] {
+            width: 414px;
+            justify-content: left;
+        }
+    
+        menu {
+            display: inline-block;
+            position: relative;
+            flex-direction: column;
+            left: 0;
+            width: 125px;
+            height: 746px;
+            justify-content: flex-start;
+            border: 5px solid #EB5428;
+        }
+    
+        main {
+            position: relative;
+            top: -500px; 
+            grid-template-columns: 150px 150px 400px 1fr;
+            grid-template-rows: 1fr 150px 450px 475px;
+        }
+        
+        [src*="street-tacos"] {
+            width: 500px;
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+    
+        #intro {
+            grid-column: 4;
+            grid-row: 1;
+        }
+    
+        #details {
+            grid-row: 2;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            background-color: black;
+            color: #7ABFBF;
+        }
+    
+        #details h2 {
+            padding-bottom: 10px;
+        }
+    
+        #details dl {
+            display: grid;
+            grid-template-rows: 25px 25px;
+        }
+    
+        #details dt {
+            grid-row: 1;
+        }
+    
+        #details dd {
+            grid-row: 2;
+            margin: 0;
+        }
+    
+        #ingredients {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row: 3;
+        }
+    
+        #directions {
+            grid-column-start: 3;
+            grid-column-end: 5;
+            grid-row: 3;
+        }
+    
+        #dishes {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row: 4;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 50px 1fr;
+            height: 450px;
+        }
+    
+        #dishes h2 {
+            grid-row: 1;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            margin: auto;
+        }
+    
+        #dishes figure {
+            width: fit-content;
+            grid-template-areas: 
+                "img"
+                "figcap"
+                "desc"
+                "rating";
+            grid-template-columns: 250px;
+            grid-template-rows: 250px 35px 35px 35px;
+            margin: auto;
+        }
+    
+        #dishes figure img {
+            width: 225px;
+            grid-area: img;
+        }
+    
+        #dishes figure figcaption {
+            grid-area: figcap;
+        }
+    
+        #dishes figure p {
+            grid-area: desc;
+        }
+    
+        #dishes figure dl {
+            grid-area: rating;
+        }
+    
+        #dishes figure dl dd {
+            display: inline;
+        }
+    
+        #dishes figure dl:after {
+            display: block;
+            content: '';
+        }
+    
+        #dishes figure dl dt {
+            display: inline-block;
+        }
+    
+        body {
+            height: 2000px;
+        }
+    
+        footer {
+            position: relative;
+            top: -750px;
+            background-color: white;
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 150px 1fr 1fr;
+            padding: 40px 15px;
+        }
+    
+        footer img {
+            grid-column: 1;
+            width: 150px;
+            padding-left: 15px;
+        }
+    
+        #social ul{
+            grid-column: 3;
+            grid-row: 1;
+        }
+    
+        #social ul a{
+            gap: 40px;
+        }
+    }
+    
+
+    /* extra credit trial */
+
+    @media print {
+
+        * {
+            page-break-inside: avoid;
+        }
+
+        body {
+            margin: 0.5in;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        img {
+            visibility: hidden;
+        }
+        
+        nav {
+            visibility: hidden;
+        }
+
+        a::after {
+            content: " (" (href) ")";
+        }
+    }
